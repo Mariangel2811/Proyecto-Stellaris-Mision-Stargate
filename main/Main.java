@@ -1,6 +1,8 @@
 package main;
 
 import factory.*;
+import observer.BaseEspacial;
+import observer.NaveObservable;
 import adapter.*;
 import state.*;
 
@@ -16,13 +18,17 @@ public class Main {
         SistemaExterno sistema = new AdaptadorSistema(viejo);
         sistema.activar();
 
-        // SIMULACION (STATE)
+         // OBSERVER
+        NaveObservable naveObs = new NaveObservable();
+        BaseEspacial base = new BaseEspacial();
+
+        naveObs.agregarObservador(base);
+        naveObs.enviarMensaje("Misión iniciada");
+
+        // SIMULACIÓN
         Mision mision = new Mision();
-
         mision.mostrarEstado();
-        mision.avanzar();
-        mision.mostrarEstado();
-
+       
     }
 
 }
