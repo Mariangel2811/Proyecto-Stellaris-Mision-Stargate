@@ -45,7 +45,7 @@ El programa sigue este flujo:
 5. Al salir, se muestra un reporte de todo lo que pasó
 
 
- 📁 Estructura
+  Estructura
 
 El proyecto está organizado por paquetes:
 
